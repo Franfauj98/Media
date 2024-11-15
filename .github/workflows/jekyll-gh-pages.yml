@@ -56,7 +56,7 @@ jobs:
     steps:
       - name: Deploy to gh pages
         run: |
-          npx angular-cli-ghpages --dir=dist/media
+          npx angular-cli-ghpages --dir=dist/media --repo=https://github.com/Franfauj98/Media.git
         env:
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
