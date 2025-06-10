@@ -1,13 +1,47 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { ComponentLoaderService, MenuItem } from './service/component-loader.service';
+import { CommonModule } from '@angular/common';
+import { BasicComponent } from './container/basic.component';
+import { AboutComponent } from './about/container/about/about.component';
 
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet],
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+  selector: 'app-root',
+  imports: [
+    MatToolbarModule, 
+    MatIconModule, 
+    MatButtonModule, 
+    MatMenuModule, 
+    CommonModule, 
+    AboutComponent
+  ],
+  standalone: true,
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
+
   title = 'Media';
+  componentLoaded: any = null;
+
+  public components: MenuItem[];
+
+  constructor(private componentLoaderService: ComponentLoaderService) {
+
+    this.components = this.getComponent();
+  }
+
+  protected getComponent(): MenuItem[] {
+
+    return this.componentLoaderService.getComponent();
+  }
+
+  protected loadComponent(component: BasicComponent): void {
+
+    this.componentLoaded = component;
+  }
+
 }
