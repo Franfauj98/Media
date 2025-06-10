@@ -165,6 +165,11 @@ ${n.map((r,o)=>`${o+1}) ${r.toString()}`).join(`
   }
 
   @media screen and (max-width: 650px) {
+
+    .header[_ngcontent-%COMP%] {
+      height: 0;
+    }
+
     .content[_ngcontent-%COMP%] {
       flex-direction: column;
       width: max-content;
