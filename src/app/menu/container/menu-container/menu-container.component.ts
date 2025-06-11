@@ -23,7 +23,6 @@ import { CommonModule } from '@angular/common';
 export class MenuContainerComponent {
 
   public components: MenuItem[];
-  public loadPage = output<BasicComponent>();
 
   constructor(private componentLoaderService: ComponentLoaderService) {
 
@@ -32,11 +31,11 @@ export class MenuContainerComponent {
 
   protected getComponent(): MenuItem[] {
 
-    return this.componentLoaderService.getComponent();
+    return this.componentLoaderService.getComponents();
   }
 
   protected loadComponent(component: BasicComponent): void {
 
-    this.loadPage.emit(component);
+    this.componentLoaderService.loadComponent(component)
   }
 }

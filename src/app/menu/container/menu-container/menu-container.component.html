@@ -3,8 +3,10 @@
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngFor="let basic of components"
-            (click)="loadComponent(basic.component)" class="menu-item">{{basic.name}}</button>
+        <ng-container *ngFor="let basic of components">
+            <button mat-menu-item *ngIf="!basic.hide" (click)="loadComponent(basic.component)"
+                class="menu-item">{{basic.name}}</button>
+        </ng-container>
     </mat-menu>
     <span>Flavors and more</span>
     <span class="example-spacer"></span>

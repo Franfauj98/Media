@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { ComponentLoaderService } from '../../../menu/service/component-loader.service';
+import { RecipePageComponent } from '../../container/page/recipe-page/recipe-page.component';
 
 @Component({
   selector: 'app-dish-card',
@@ -18,4 +20,11 @@ export class DishCardComponent {
   @Input({required: true}) public photo!: String
   @Input({required: true}) public icon!: String
 
+  constructor(private componentLoaderService: ComponentLoaderService) {
+  }
+
+  loadRecipePage() {
+    
+    this.componentLoaderService.loadComponent(RecipePageComponent)
+  }
 }
