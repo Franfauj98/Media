@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { ComponentLoaderService, MenuItem } from '../../service/component-loader.service';
-import { BasicComponent } from '../../../container/basic.component';
+import { BasicComponent } from '../../../common/model/basic';
 import { CommonModule } from '@angular/common';
 
 @Component({

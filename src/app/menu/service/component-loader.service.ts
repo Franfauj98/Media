@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AboutComponent } from "../../about/container/about/about-container.component";
 import { RecipeContainerComponent } from "../../recipe/container/recipe-container/recipe-container.component";
-import { BasicComponent } from "../../container/basic.component";
+import { BasicComponent } from "../../common/model/basic";
 
 @Injectable({
   providedIn: 'root'

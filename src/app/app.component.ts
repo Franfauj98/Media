@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BasicComponent } from './container/basic.component';
+import { BasicComponent } from './common/model/basic';
 import { MenuContainerComponent } from "./menu/container/menu-container/menu-container.component";
+import { RecipeContainerComponent } from './recipe/container/recipe-container/recipe-container.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ import { MenuContainerComponent } from "./menu/container/menu-container/menu-con
 export class AppComponent {
 
   title = 'FlavorsAndMore';
-  componentLoaded: any = null;
+  componentLoaded: any = RecipeContainerComponent;
 
   constructor() {
   }

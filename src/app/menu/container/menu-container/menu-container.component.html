@@ -4,7 +4,7 @@
     </button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item *ngFor="let basic of components"
-            (click)="loadComponent(basic.component)">{{basic.name}}</button>
+            (click)="loadComponent(basic.component)" class="menu-item">{{basic.name}}</button>
     </mat-menu>
     <span>Flavors and more</span>
     <span class="example-spacer"></span>
