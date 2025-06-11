@@ -16,7 +16,7 @@ import { RecipeContainerComponent } from './recipe/container/recipe-container/re
 })
 export class AppComponent {
 
-  title = 'FlavorsAndMore';
+  title = 'Media';
   componentLoaded: any = RecipeContainerComponent;
 
   constructor() {
