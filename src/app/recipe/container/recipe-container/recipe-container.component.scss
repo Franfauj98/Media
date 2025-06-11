@@ -1,22 +1,10 @@
 .dish-types {
+
     max-width: 90%;
     margin: auto;
 
     .type {
+
         margin-top: 2rem;
-
-        .example-header-image {
-            // background-image: url('https://material.angular.dev/assets/img/examples/shiba1.jpg');
-            background-size: cover;
-
-            .glass-cup {
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-            }
-        }
     }
 }
