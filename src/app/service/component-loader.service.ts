@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BasicComponent } from '../container/basic.component';
-import { AboutComponent } from '../about/container/about/about.component';
+import { AboutComponent } from '../about/container/about/about-container.component';
 import { RecipeContainerComponent } from '../recipe/container/recipe-container/recipe-container.component';
 
 @Injectable({

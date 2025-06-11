@@ -1,3 +1,3 @@
-export class BasicComponent {
+export interface BasicComponent {
 
 }

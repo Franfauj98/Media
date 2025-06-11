@@ -6,7 +6,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ComponentLoaderService, MenuItem } from './service/component-loader.service';
 import { CommonModule } from '@angular/common';
 import { BasicComponent } from './container/basic.component';
-import { AboutComponent } from './about/container/about/about.component';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +14,7 @@ import { AboutComponent } from './about/container/about/about.component';
     MatIconModule, 
     MatButtonModule, 
     MatMenuModule, 
-    CommonModule, 
-    AboutComponent
+    CommonModule
   ],
   standalone: true,
   templateUrl: './app.component.html',

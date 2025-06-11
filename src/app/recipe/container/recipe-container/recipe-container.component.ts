@@ -8,6 +8,6 @@ import { BasicComponent } from '../../../container/basic.component';
   templateUrl: './recipe-container.component.html',
   styleUrl: './recipe-container.component.scss'
 })
-export class RecipeContainerComponent  extends BasicComponent {
+export class RecipeContainerComponent implements BasicComponent {
 
 }
