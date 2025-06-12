@@ -10,23 +10,29 @@ import { RecipePageComponent } from "../../recipe/container/page/recipe-page/rec
 export class ComponentLoaderService {
 
   private components: MenuItem[] = [
-    new MenuItem(RecipeContainerComponent, 'recettes', false), 
+    new MenuItem(RecipeContainerComponent, 'recettes', false),
     new MenuItem(AboutComponent, 'à propos', false),
     new MenuItem(RecipePageComponent, 'Recette', true)
   ];
 
   componentLoaded: WritableSignal<any> = signal(RecipeContainerComponent);
+  componentType: WritableSignal<COMPONENT_TYPE> = signal(COMPONENT_TYPE.TOUS);
 
   constructor() { }
 
   public getComponents(): MenuItem[] {
-    
+
     return this.components;
   }
 
   public loadComponent(component: BasicComponent): void {
-    
+
     this.componentLoaded.set(component);
+  }
+
+  public loadComponentInputs(componentType: COMPONENT_TYPE): void {
+
+    this.componentType.set(componentType);
   }
 
 }
@@ -41,4 +47,11 @@ export class MenuItem {
     this.name = name;
     this.hide = hide
   }
+}
+
+export enum COMPONENT_TYPE {
+  ENTREE,
+  PLAT,
+  DESSERT,
+  TOUS
 }

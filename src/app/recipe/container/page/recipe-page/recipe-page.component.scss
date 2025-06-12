@@ -1,0 +1,37 @@
+.search-text-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+    height: 3rem;
+    border: 1px solid;
+    border-radius: 20px;
+    position: relative;
+
+    .icon-zone {
+        align-self: center;
+        padding: 0 3%;
+
+        .icon {
+            height: 2.5rem;
+            width: 2.5rem;
+            font-size: 2rem;
+            align-content: center;
+        }
+    }
+
+    .text-zone {
+        height: 100%;
+        width: 100%;
+
+        input {
+            height: 95%;
+            border: none;
+            width: 90%;
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+}
