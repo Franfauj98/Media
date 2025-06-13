@@ -1,27 +1,101 @@
-# Media
+# Flavors and more
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+##
 
-## Development server
+## Architecture
+The objective is to follow the DDD architecture concept like the following : 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+src/
+├── app/
+│   ├── core/
+│   │   ├── services/
+│   │   │   ├── api.service.ts
+│   │   │   ├── auth.service.ts
+│   │   │   └── ...
+│   │   ├── models/
+│   │   │   ├── user.model.ts
+│   │   │   └── ...
+│   │   ├── guards/
+│   │   │   ├── auth.guard.ts
+│   │   │   └── ...
+│   │   └── interceptors/
+│   │       ├── http.interceptor.ts
+│   │       └── ...
+│   ├── shared/
+│   │   ├── components/
+│   │   │   ├── header/
+│   │   │   │   ├── header.component.ts
+│   │   │   │   ├── header.component.html
+│   │   │   │   ├── header.component.scss
+│   │   │   │   └── header.component.spec.ts
+│   │   │   ├── footer/
+│   │   │   │   ├── footer.component.ts
+│   │   │   │   ├── footer.component.html
+│   │   │   │   ├── footer.component.scss
+│   │   │   │   └── footer.component.spec.ts
+│   │   │   └── ...
+│   │   ├── directives/
+│   │   │   ├── highlight.directive.ts
+│   │   │   └── ...
+│   │   ├── pipes/
+│   │   │   ├── capitalize.pipe.ts
+│   │   │   └── ...
+│   │   └── services/
+│   │       ├── logging.service.ts
+│   │       └── ...
+│   ├── features/
+│   │   ├── carnet-de-recette/
+│   │   │   ├── components/
+│   │   │   │   ├── recipe-list/
+│   │   │   │   │   ├── recipe-list.component.ts
+│   │   │   │   │   ├── recipe-list.component.html
+│   │   │   │   │   ├── recipe-list.component.scss
+│   │   │   │   │   └── recipe-list.component.spec.ts
+│   │   │   │   ├── recipe-detail/
+│   │   │   │   │   ├── recipe-detail.component.ts
+│   │   │   │   │   ├── recipe-detail.component.html
+│   │   │   │   │   ├── recipe-detail.component.scss
+│   │   │   │   │   └── recipe-detail.component.spec.ts
+│   │   │   │   └── ...
+│   │   │   ├── services/
+│   │   │   │   ├── recipe.service.ts
+│   │   │   │   └── ...
+│   │   │   ├── models/
+│   │   │   │   ├── recipe.model.ts
+│   │   │   │   └── ...
+│   │   │   ├── carnet-de-recette.module.ts
+│   │   │   ├── carnet-de-recette-routing.module.ts
+│   │   │   └── ...
+│   │   └── a-propos/
+│   │       ├── components/
+│   │       │   ├── about/
+│   │       │   │   ├── about.component.ts
+│   │       │   │   ├── about.component.html
+│   │       │   │   ├── about.component.scss
+│   │       │   │   └── about.component.spec.ts
+│   │       │   └── ...
+│   │       ├── services/
+│   │       │   ├── about.service.ts
+│   │       │   └── ...
+│   │       ├── models/
+│   │       │   ├── about.model.ts
+│   │       │   └── ...
+│   │       ├── a-propos.module.ts
+│   │       ├── a-propos-routing.module.ts
+│   │       └── ...
+│   ├── app.component.ts
+│   ├── app.component.html
+│   ├── app.component.scss
+│   ├── app.module.ts
+│   └── app-routing.module.ts
+├── assets/
+│   ├── images/
+│   ├── styles/
+│   └── ...
+├── environments/
+│   ├── environment.ts
+│   └── environment.prod.ts
+└── ...
+```
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

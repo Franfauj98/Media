@@ -1,9 +1,8 @@
 import { Component, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BasicComponent } from './common/model/basic';
-import { MenuContainerComponent } from "./menu/container/menu-container/menu-container.component";
-import { RecipeContainerComponent } from './recipe/container/recipe-container/recipe-menu/recipe-container.component';
-import { ComponentLoaderService } from './menu/service/component-loader.service';
+import { MenuContainerComponent } from "./shared/components/header/header.component";
+import { ComponentLoaderService } from './shared/services/component/loader/component-loader.service';
+import { RecipeTypeDishPageComponent } from './features/recipe/container/type/dish/page.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +18,7 @@ import { ComponentLoaderService } from './menu/service/component-loader.service'
 export class AppComponent {
 
   title = 'Media';
-  componentLoaded: any = RecipeContainerComponent;
+  componentLoaded: any = RecipeTypeDishPageComponent;
 
   constructor(private componentLoaderService: ComponentLoaderService) {
     
