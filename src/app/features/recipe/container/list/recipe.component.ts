@@ -13,12 +13,13 @@ import {
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
   selector: 'app-recipe-container-list',
   imports: [MatFormFieldModule, MatInputModule, MatIconModule,
     MatButtonModule, MatBottomSheetModule, MatPaginatorModule,
-    MatListModule, MatCardModule],
+    MatListModule, MatCardModule, MatChipsModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
