@@ -1,37 +1,31 @@
-.search-text-container {
+.filters-section {
+
     display: flex;
     flex-direction: row;
     width: 90%;
     margin: auto;
-    height: 2.5rem;
-    border: 1px solid;
-    border-radius: 20px;
-    position: relative;
+    justify-content: space-between;
 
-    .icon-zone {
-        align-self: center;
-        padding: 0 3%;
-
-        .icon {
-            height: 2.5rem;
-            width: 2.5rem;
-            font-size: 2rem;
-            align-content: center;
-        }
+    .search-text-container {
+        width: 80%;
     }
 
-    .text-zone {
-        height: 90%;
-        width: 100%;
+    .filter-container {
+        width: 20%;
+        text-align: center;
 
-        input {
-            height: 95%;
-            border: none;
-            width: 90%;
-
-            &:focus-visible {
-                outline: none;
-            }
+        button {
+            width: 68%;
+            height: 68%;
         }
+    }
+}
+
+.recipe-list {
+    width: 90%;
+    margin: auto;
+
+    .example-card {
+        margin-bottom: 2rem;
     }
 }
