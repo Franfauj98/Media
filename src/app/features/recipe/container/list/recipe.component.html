@@ -18,30 +18,31 @@
 
 <section class="recipe-list">
 
-    <mat-card class="example-card" appearance="outlined">
+    <mat-card class="menu-overview" appearance="outlined">
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <mat-icon mat-card-avatar>
+                <div class="material-symbols-outlined header-icon">rice_bowl</div>
+            </mat-icon>
+            <mat-card-title>Rouleau de printemps</mat-card-title>
+            <mat-card-subtitle>Frais et délicieux</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg"
-            alt="Photo of a Shiba Inu">
+        <img mat-card-image src="rouleau_printemps.jpg" alt="Photo of a spring roll">
         <mat-card-content>
 
-            <mat-chip-set aria-label="Dog selection">
-                <mat-chip>
+            <mat-chip-set aria-label="Food selection" class="chip-set">
+                <mat-chip class="vegetarian-chip">
                     <div class="chip-content">
                         <mat-icon matPrefix>grain</mat-icon>
                         Végé
                     </div>
                 </mat-chip>
-                <mat-chip>
+                <mat-chip class="guilty-chip">
                     <div class="chip-content">
                         <mat-icon matPrefix>fastfood</mat-icon>
                         Guilty
                     </div>
                 </mat-chip>
-                <mat-chip>
+                <mat-chip class="yummy-chip">
                     <div class="chip-content">
                         <mat-icon matPrefix>cookie</mat-icon>
                         Yummy
@@ -50,35 +51,55 @@
             </mat-chip-set>
 
             <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                Enveloppé par une feuille de riz humide et garni d'ingrédients frais le rouleau de printemps est un
+                délice en toutes saisons.
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button matButton>LIKE</button>
-            <button matButton>SHARE</button>
+            <button matButton>La recette !</button>
         </mat-card-actions>
     </mat-card>
 
-    <mat-card class="example-card" appearance="outlined">
+
+    <mat-card class="menu-overview" appearance="outlined">
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <mat-icon mat-card-avatar>
+                <div class="material-symbols-outlined header-icon">rice_bowl</div>
+            </mat-icon>
+            <mat-card-title>Rouleau de printemps</mat-card-title>
+            <mat-card-subtitle>Frais et délicieux</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg"
-            alt="Photo of a Shiba Inu">
+        <img mat-card-image src="rouleau_printemps.jpg" alt="Photo of a spring roll">
         <mat-card-content>
+
+            <mat-chip-set aria-label="Food selection" class="chip-set">
+                <mat-chip class="vegetarian-chip">
+                    <div class="chip-content">
+                        <mat-icon matPrefix>grain</mat-icon>
+                        Végé
+                    </div>
+                </mat-chip>
+                <mat-chip class="guilty-chip">
+                    <div class="chip-content">
+                        <mat-icon matPrefix>fastfood</mat-icon>
+                        Guilty
+                    </div>
+                </mat-chip>
+                <mat-chip class="yummy-chip">
+                    <div class="chip-content">
+                        <mat-icon matPrefix>cookie</mat-icon>
+                        Yummy
+                    </div>
+                </mat-chip>
+            </mat-chip-set>
+
             <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                Enveloppé par une feuille de riz humide et garni d'ingrédients frais le rouleau de printemps est un
+                délice en toutes saisons.
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button matButton>LIKE</button>
-            <button matButton>SHARE</button>
+            <button matButton>La recette !</button>
         </mat-card-actions>
     </mat-card>
 
