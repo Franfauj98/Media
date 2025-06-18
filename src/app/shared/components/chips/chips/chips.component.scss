@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+
+.chip-set {
+
+    margin-top: 1rem;
+
+    .vegetarian-chip {
+        @include mat.chips-overrides((label-text-color: #347433,
+                outline-color: #347433,
+            ));
+
+    }
+
+    .guilty-chip {
+        @include mat.chips-overrides((label-text-color: #FF6F3C,
+                outline-color: #FF6F3C,
+            ));
+
+    }
+
+    .yummy-chip {
+        @include mat.chips-overrides((label-text-color: #FFC107,
+                outline-color: #FFC107,
+            ));
+
+    }
+
+    .chip-content {
+        display: flex;
+        align-items: center;
+    }
+}

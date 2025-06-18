@@ -17,92 +17,9 @@
 </section>
 
 <section class="recipe-list">
-
-    <mat-card class="menu-overview" appearance="outlined">
-        <mat-card-header>
-            <mat-icon mat-card-avatar>
-                <div class="material-symbols-outlined header-icon">rice_bowl</div>
-            </mat-icon>
-            <mat-card-title>Rouleau de printemps</mat-card-title>
-            <mat-card-subtitle>Frais et délicieux</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="rouleau_printemps.jpg" alt="Photo of a spring roll">
-        <mat-card-content>
-
-            <mat-chip-set aria-label="Food selection" class="chip-set">
-                <mat-chip class="vegetarian-chip">
-                    <div class="chip-content">
-                        <mat-icon matPrefix>grain</mat-icon>
-                        Végé
-                    </div>
-                </mat-chip>
-                <mat-chip class="guilty-chip">
-                    <div class="chip-content">
-                        <mat-icon matPrefix>fastfood</mat-icon>
-                        Guilty
-                    </div>
-                </mat-chip>
-                <mat-chip class="yummy-chip">
-                    <div class="chip-content">
-                        <mat-icon matPrefix>cookie</mat-icon>
-                        Yummy
-                    </div>
-                </mat-chip>
-            </mat-chip-set>
-
-            <p>
-                Enveloppé par une feuille de riz humide et garni d'ingrédients frais le rouleau de printemps est un
-                délice en toutes saisons.
-            </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button matButton>La recette !</button>
-        </mat-card-actions>
-    </mat-card>
-
-
-    <mat-card class="menu-overview" appearance="outlined">
-        <mat-card-header>
-            <mat-icon mat-card-avatar>
-                <div class="material-symbols-outlined header-icon">rice_bowl</div>
-            </mat-icon>
-            <mat-card-title>Rouleau de printemps</mat-card-title>
-            <mat-card-subtitle>Frais et délicieux</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="rouleau_printemps.jpg" alt="Photo of a spring roll">
-        <mat-card-content>
-
-            <mat-chip-set aria-label="Food selection" class="chip-set">
-                <mat-chip class="vegetarian-chip">
-                    <div class="chip-content">
-                        <mat-icon matPrefix>grain</mat-icon>
-                        Végé
-                    </div>
-                </mat-chip>
-                <mat-chip class="guilty-chip">
-                    <div class="chip-content">
-                        <mat-icon matPrefix>fastfood</mat-icon>
-                        Guilty
-                    </div>
-                </mat-chip>
-                <mat-chip class="yummy-chip">
-                    <div class="chip-content">
-                        <mat-icon matPrefix>cookie</mat-icon>
-                        Yummy
-                    </div>
-                </mat-chip>
-            </mat-chip-set>
-
-            <p>
-                Enveloppé par une feuille de riz humide et garni d'ingrédients frais le rouleau de printemps est un
-                délice en toutes saisons.
-            </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button matButton>La recette !</button>
-        </mat-card-actions>
-    </mat-card>
-
+    <ng-container *ngFor="let dishOverview of dishOverviews">
+        <app-dish-overview-card [dishOverview]="dishOverview"></app-dish-overview-card>
+    </ng-container>
 </section>
 
 <section class="pagination">

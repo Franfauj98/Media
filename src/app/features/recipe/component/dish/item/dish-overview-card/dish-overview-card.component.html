@@ -1,0 +1,21 @@
+<mat-card class="menu-overview" appearance="outlined">
+    <mat-card-header>
+        <mat-icon mat-card-avatar>
+            <div class="material-symbols-outlined header-icon">{{dishOverview.headerIcon}}</div>
+        </mat-icon>
+        <mat-card-title>{{dishOverview.headerTitle}}</mat-card-title>
+        <mat-card-subtitle>{{dishOverview.headerSubtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="dishOverview.photo" alt="{{dishOverview.photoDescription}}">
+    <mat-card-content>
+
+        <app-chips [chips]="dishOverview.chips"></app-chips>
+
+        <p>
+            {{dishOverview.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button matButton>{{dishOverview.buttonLabel}}</button>
+    </mat-card-actions>
+</mat-card>

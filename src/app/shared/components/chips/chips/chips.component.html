@@ -1,0 +1,10 @@
+<mat-chip-set aria-label="Food selection" class="chip-set">
+    <ng-container *ngFor="let chip of chips">
+        <mat-chip class="{{chip.htmlClass}}">
+            <div class="chip-content">
+                <mat-icon matPrefix>{{chip.icon}}</mat-icon>
+                {{chip.label}}
+            </div>
+        </mat-chip>
+    </ng-container>
+</mat-chip-set>

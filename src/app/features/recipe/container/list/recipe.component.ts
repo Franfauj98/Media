@@ -14,12 +14,17 @@ import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { DishOverviewCardComponent } from "../../component/dish/item/dish-overview-card/dish-overview-card.component";
+import { CommonModule } from '@angular/common';
+import { DishItemServiceService } from '../../service/dish/item/dish-item-service.service';
+import { DishOverview } from '../../model/DishOverview';
 
 @Component({
   selector: 'app-recipe-container-list',
   imports: [MatFormFieldModule, MatInputModule, MatIconModule,
     MatButtonModule, MatBottomSheetModule, MatPaginatorModule,
-    MatListModule, MatCardModule, MatChipsModule],
+    MatListModule, MatCardModule, MatChipsModule, DishOverviewCardComponent,
+    CommonModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -30,12 +35,16 @@ export class RecipeContainerListComponent implements BasicComponent {
 
   private _bottomSheet = inject(MatBottomSheet);
 
-  constructor(private componentLoaderService: ComponentLoaderService) {
+  dishOverviews: DishOverview[] = []
+
+  constructor(private componentLoaderService: ComponentLoaderService, private dishItemServiceService: DishItemServiceService) {
 
     effect(() => {
 
       this.componentType = this.componentLoaderService.componentType()
     })
+
+    this.dishOverviews = this.dishItemServiceService.getDishesFirstMealOverview()
   }
 
   openBottomSheet(): void {

@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { DishCard, DishCardService } from '../../../service/dishCard/dish-card.service';
 import { BasicComponent } from '../../../../../shared/model/page/basic';
-import { RecipeTypeDishCardComponent } from '../../../component/type/dish/card.component';
+import { RecipeTypeDishCardComponent } from '../../../component/dish/type/card.component';
 
 @Component({
   selector: 'app-recipe-container',
