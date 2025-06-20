@@ -42,9 +42,8 @@ export class RecipeContainerListComponent implements BasicComponent {
     effect(() => {
 
       this.componentType = this.componentLoaderService.componentType()
+      this.dishOverviews = this.dishItemServiceService.getDishesOverviewByType(this.componentType)
     })
-
-    this.dishOverviews = this.dishItemServiceService.getDishesFirstMealOverview()
   }
 
   openBottomSheet(): void {

@@ -21,8 +21,7 @@ export class RecipeTypeDishCardComponent {
   @Input({ required: true }) public icon!: String
   @Input({ required: true }) public dishType!: COMPONENT_TYPE
 
-  constructor(private componentLoaderService: ComponentLoaderService) {
-  }
+  constructor(private componentLoaderService: ComponentLoaderService) { }
 
   loadRecipePage() {
 

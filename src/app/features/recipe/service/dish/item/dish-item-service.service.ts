@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ChipsContent } from '../../../../../shared/model/chips/ChipsContent';
 import { DishOverview } from '../../../model/DishOverview';
+import { COMPONENT_TYPE } from '../../../../../shared/services/component/loader/component-loader.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +23,31 @@ export class DishItemServiceService {
     )
   ]
 
+  private dishesMainMealOverview: DishOverview[] = []
+
+  private dishesDesertOverview: DishOverview[] = []
+
   constructor() { }
 
-  getDishesFirstMealOverview() {
+  getDishesFirstMealOverview(): DishOverview[] {
     return this.dishesFirstMealOverview
+  }
+
+  getDishesMainMealOverview(): DishOverview[] {
+    return this.dishesMainMealOverview
+  }
+
+  getDishesDesertOverview(): DishOverview[] {
+    return this.dishesDesertOverview
+  }
+
+  getDishesOverviewByType(componentType: COMPONENT_TYPE): DishOverview[] {
+    switch (componentType) {
+      case COMPONENT_TYPE.ENTREE: return this.dishesFirstMealOverview
+      case COMPONENT_TYPE.PLAT: return this.dishesMainMealOverview
+      case COMPONENT_TYPE.DESSERT: return this.dishesDesertOverview
+      default: return []
+    }
   }
 
 }
