@@ -18,13 +18,14 @@ import { DishOverviewCardComponent } from "../../component/dish/item/dish-overvi
 import { CommonModule } from '@angular/common';
 import { DishItemServiceService } from '../../service/dish/item/dish-item-service.service';
 import { DishOverview } from '../../model/DishOverview';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-container-list',
   imports: [MatFormFieldModule, MatInputModule, MatIconModule,
     MatButtonModule, MatBottomSheetModule, MatPaginatorModule,
     MatListModule, MatCardModule, MatChipsModule, DishOverviewCardComponent,
-    CommonModule],
+    CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -37,6 +38,8 @@ export class RecipeContainerListComponent implements BasicComponent {
 
   dishOverviews: DishOverview[] = []
 
+  search: FormControl = new FormControl('')
+
   constructor(private componentLoaderService: ComponentLoaderService, private dishItemServiceService: DishItemServiceService) {
 
     effect(() => {
@@ -44,6 +47,20 @@ export class RecipeContainerListComponent implements BasicComponent {
       this.componentType = this.componentLoaderService.componentType()
       this.dishOverviews = this.dishItemServiceService.getDishesOverviewByType(this.componentType)
     })
+
+    this.search.valueChanges
+      .subscribe(searchValue => {
+
+        const foundedDishes = this.dishItemServiceService.searchDishesFirstMealOverview(searchValue);
+
+        if (foundedDishes.length > 0) {
+          this.dishOverviews = foundedDishes.map(serchResult => serchResult.item)
+        } else if (searchValue.length === 0) {
+          this.dishOverviews = this.dishItemServiceService.getDishesOverviewByType(this.componentType)
+        } else {
+          this.dishOverviews = []
+        }
+      })
   }
 
   openBottomSheet(): void {
