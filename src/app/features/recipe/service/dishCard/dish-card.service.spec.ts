@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { DishCardService } from './dish-card.service';
+import {DishCardService} from './dish-card.service';
 
 describe('DishCardService', () => {
   let service: DishCardService;

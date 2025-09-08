@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { MatChipsModule } from '@angular/material/chips';
-import { ChipsContent } from '../../../model/chips/ChipsContent';
-import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
+import {Component, Input} from '@angular/core';
+import {MatChipsModule} from '@angular/material/chips';
+import {ChipsContent} from '../../../model/chips/ChipsContent';
+import {MatIconModule} from '@angular/material/icon';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-chips',
@@ -11,5 +11,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './chips.component.scss'
 })
 export class ChipsComponent {
-  @Input({ required: true }) public chips!: ChipsContent[]
+  @Input({required: true}) public chips!: ChipsContent[]
 }

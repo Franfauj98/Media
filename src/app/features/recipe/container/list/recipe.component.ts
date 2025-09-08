@@ -1,24 +1,23 @@
-import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { BasicComponent } from '../../../../shared/model/page/basic';
-import { COMPONENT_TYPE, ComponentLoaderService } from '../../../../shared/services/component/loader/component-loader.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import {ChangeDetectionStrategy, Component, effect, inject} from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {BasicComponent} from '../../../../shared/model/page/basic';
 import {
-  MatBottomSheet,
-  MatBottomSheetModule,
-  MatBottomSheetRef,
-} from '@angular/material/bottom-sheet';
-import { MatListModule } from '@angular/material/list';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
-import { DishOverviewCardComponent } from "../../component/dish/item/dish-overview-card/dish-overview-card.component";
-import { CommonModule } from '@angular/common';
-import { DishItemServiceService } from '../../service/dish/item/dish-item-service.service';
-import { DishOverview } from '../../model/DishOverview';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+  COMPONENT_TYPE,
+  ComponentLoaderService
+} from '../../../../shared/services/component/loader/component-loader.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatBottomSheet, MatBottomSheetModule, MatBottomSheetRef,} from '@angular/material/bottom-sheet';
+import {MatListModule} from '@angular/material/list';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {DishOverviewCardComponent} from "../../component/dish/item/dish-overview-card/dish-overview-card.component";
+import {CommonModule} from '@angular/common';
+import {DishItemServiceService} from '../../service/dish/item/dish-item-service.service';
+import {DishOverview} from '../../model/DishOverview';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-container-list',

@@ -1,27 +1,27 @@
 .filters-section {
 
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    margin: auto;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
 
-    .search-text-container {
-        width: 80%;
+  .search-text-container {
+    width: 80%;
+  }
+
+  .filter-container {
+    width: 20%;
+    text-align: center;
+
+    button {
+      width: 68%;
+      height: 68%;
     }
-
-    .filter-container {
-        width: 20%;
-        text-align: center;
-
-        button {
-            width: 68%;
-            height: 68%;
-        }
-    }
+  }
 }
 
 .recipe-list {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }

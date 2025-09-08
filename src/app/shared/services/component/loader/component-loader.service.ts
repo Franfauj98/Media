@@ -1,8 +1,9 @@
-import { Injectable, signal, WritableSignal } from "@angular/core";
-import { BasicComponent } from "../../../model/page/basic";
-import { AboutComponent } from "../../../../features/about/container/about/about-container.component";
-import { RecipeTypeDishPageComponent } from "../../../../features/recipe/container/type/dish/page.component";
-import { RecipeContainerListComponent } from "../../../../features/recipe/container/list/recipe.component";
+import {Injectable, signal, WritableSignal} from "@angular/core";
+import {BasicComponent} from "../../../model/page/basic";
+import {AboutComponent} from "../../../../features/about/container/about/about-container.component";
+import {RecipeTypeDishPageComponent} from "../../../../features/recipe/container/type/dish/page.component";
+import {RecipeContainerListComponent} from "../../../../features/recipe/container/list/recipe.component";
+import {TideComponent} from "../../../../features/tide-viewer/container/tide.component";
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,17 @@ import { RecipeContainerListComponent } from "../../../../features/recipe/contai
 export class ComponentLoaderService {
 
   private components: MenuItem[] = [
-    new MenuItem(RecipeTypeDishPageComponent, 'recettes', false),
-    new MenuItem(AboutComponent, 'à propos', false),
-    new MenuItem(RecipeContainerListComponent, 'Recette', true)
+    new MenuItem(RecipeTypeDishPageComponent, 'Recettes', false),
+    new MenuItem(RecipeContainerListComponent, 'Recette', true),
+    new MenuItem(TideComponent, 'Marées', false),
+    new MenuItem(AboutComponent, 'À propos', false),
   ];
 
   componentLoaded: WritableSignal<any> = signal(RecipeTypeDishPageComponent);
   componentType: WritableSignal<COMPONENT_TYPE> = signal(COMPONENT_TYPE.TOUS);
 
-  constructor() { }
+  constructor() {
+  }
 
   public getComponents(): MenuItem[] {
 

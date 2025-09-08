@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { COMPONENT_TYPE } from '../../../../shared/services/component/loader/component-loader.service';
+import {Injectable} from '@angular/core';
+import {COMPONENT_TYPE} from '../../../../shared/services/component/loader/component-loader.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class DishCardService {
     new DishCard('Dessert', 'Un peu de douceur', 'Bon maintenant qu\'on a bien mangé il s\'agirait de se faire plaisir pour finir. Du sucre, du chocolat ou des fruits ; un peu de farine, de lait et le tour est joué.', 'Les desserts', 'dessert.jpg', 'cookie', COMPONENT_TYPE.DESSERT)
   ]
 
-  constructor() { }
+  constructor() {
+  }
 
   getDishCards(): DishCard[] {
 

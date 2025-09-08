@@ -3,7 +3,8 @@
 ##
 
 ## Architecture
-The objective is to follow the DDD architecture concept like the following : 
+
+The objective is to follow the DDD architecture concept like the following :
 
 ```
 src/

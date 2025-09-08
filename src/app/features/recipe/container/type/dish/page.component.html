@@ -1,7 +1,7 @@
 <section class="dish-types">
-    <article class="type" *ngFor="let dishCard of dishCards">
-        <app-dish-card [buttonTitle]="dishCard.buttonTitle" [content]="dishCard.content" [title]="dishCard.title"
-            [subTitle]="dishCard.subTitle" [icon]="dishCard.icon" [photo]="dishCard.photo"
-            [dishType]="dishCard.dishType"></app-dish-card>
-    </article>
+  <article class="type" *ngFor="let dishCard of dishCards">
+    <app-dish-card [buttonTitle]="dishCard.buttonTitle" [content]="dishCard.content" [title]="dishCard.title"
+                   [subTitle]="dishCard.subTitle" [icon]="dishCard.icon" [photo]="dishCard.photo"
+                   [dishType]="dishCard.dishType"></app-dish-card>
+  </article>
 </section>

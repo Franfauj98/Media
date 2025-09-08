@@ -1,11 +1,11 @@
-import { Component, EventEmitter, output } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
-import { ComponentLoaderService, MenuItem } from '../../services/component/loader/component-loader.service';
-import { BasicComponent } from '../../model/page/basic';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {ComponentLoaderService, MenuItem} from '../../services/component/loader/component-loader.service';
+import {BasicComponent} from '../../model/page/basic';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-menu-container',
