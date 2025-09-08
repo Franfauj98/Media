@@ -53,4 +53,25 @@
   font-size: 1em;
   text-shadow: 1px 1px 0 #fffbe7;
 }
-
+@media (max-width: 600px) {
+  .maree-card {
+    border-radius: 8px;
+    border-width: 2px;
+    padding: 10px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  .maree-card-row {
+    gap: 8px;
+  }
+  .maree-card-label {
+    font-size: 0.8em;
+    letter-spacing: 1px;
+  }
+  .maree-card-label .icon {
+    font-size: 0.8em;
+  }
+  .maree-card-value {
+    font-size: 0.8em;
+  }
+}

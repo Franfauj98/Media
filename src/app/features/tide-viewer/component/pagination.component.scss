@@ -4,6 +4,11 @@
   align-items: center;
   gap: 18px;
   margin-top: 32px;
+
+  @media (max-width: 600px) {
+    gap: 8px;
+    margin-top: 16px;
+  }
 }
 
 button {
@@ -32,6 +37,13 @@ button {
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border-width: 2px;
+  }
 }
 
 span {
@@ -40,5 +52,8 @@ span {
   font-weight: bold;
   text-shadow: 1px 1px 0 #222c44;
   font-family: inherit;
-}
 
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+  }
+}

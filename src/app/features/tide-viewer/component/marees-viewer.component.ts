@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {MareeDay, MareesService} from '../marees.service';
+import {MareeDayComponent} from "./maree-day.component";
+import {PaginationComponent} from "./pagination.component";
+import {MareeDay, TideService} from "../service/tide.service";
+import {HttpClientModule} from "@angular/common/http";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'marees-viewer',
@@ -17,6 +21,12 @@ import {MareeDay, MareesService} from '../marees.service';
         (pageChange)="onPageChange($event)"></marees-pagination>
     </div>
   `,
+  imports: [
+    MareeDayComponent,
+    PaginationComponent,
+    CommonModule
+  ],
+  providers: [HttpClientModule, TideService],
   styleUrls: ['./marees-viewer.component.scss']
 })
 export class MareesViewerComponent implements OnInit {
@@ -25,7 +35,7 @@ export class MareesViewerComponent implements OnInit {
   currentPage = 1;
   totalPages = 1;
 
-  constructor(private mareesService: MareesService) {
+  constructor(private mareesService: TideService) {
   }
 
   ngOnInit() {

@@ -1,4 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {MareeCardComponent} from "./maree-card.component";
+import {CommonModule, DatePipe} from "@angular/common";
 
 @Component({
   selector: 'maree-day',
@@ -10,6 +12,11 @@ import {Component, Input} from '@angular/core';
       </div>
     </div>
   `,
+  imports: [
+    MareeCardComponent,
+    DatePipe,
+    CommonModule
+  ],
   styleUrls: ['./maree-day.component.scss']
 })
 export class MareeDayComponent {
