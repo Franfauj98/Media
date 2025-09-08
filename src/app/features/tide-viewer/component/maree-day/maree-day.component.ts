@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {MareeCardComponent} from "./maree-card.component";
+import {MareeCardComponent} from "../maree-card/maree-card.component";
 import {CommonModule, DatePipe} from "@angular/common";
 
 @Component({
@@ -22,4 +22,3 @@ import {CommonModule, DatePipe} from "@angular/common";
 export class MareeDayComponent {
   @Input() day: any;
 }
-

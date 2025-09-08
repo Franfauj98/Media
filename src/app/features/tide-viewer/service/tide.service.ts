@@ -15,13 +15,18 @@ export interface MareeDay {
 
 @Injectable({providedIn: 'root'})
 export class TideService {
-  private url = 'assets/data/marees_mareeinfo.json';
+  private readonly DATA_PATH = 'assets/data/';
+  private readonly FILES: Record<string, string> = {
+    septembre: 'marees_mareeinfo.json',
+    octobre: 'marees_mareeinfo_octobre.json',
+    novembre: 'marees_mareeinfo_novembre.json'
+  };
 
   constructor(private http: HttpClient) {
   }
 
-  getMarees(): Observable<MareeDay[]> {
-    return this.http.get<MareeDay[]>(this.url);
+  getMareesForMonth(month: string): Observable<MareeDay[]> {
+    const file = this.FILES[month] || this.FILES['septembre'];
+    return this.http.get<MareeDay[]>(`${this.DATA_PATH}${file}`);
   }
 }
-

@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {MareeDay, TideService} from '../service/tide.service';
+import {Component} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import {MareesViewerComponent} from '../component/marees-viewer.component';
+import {MareesViewerComponent} from "../component/marees-viewer/marees-viewer.component";
 
 @Component({
   selector: 'app-root',

@@ -1,0 +1,48 @@
+.month-selector-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.month-selector-container label {
+  color: #fff;
+  font-family: 'Press Start 2P', 'VT323', 'Courier New', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.month-select {
+  background: linear-gradient(90deg, #ff6f61 0%, #6ec6ff 100%);
+  color: #222c44;
+  border: 2px solid #fffbe7;
+  border-radius: 8px;
+  font-family: 'Press Start 2P', 'VT323', 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 8px 18px;
+  box-shadow: 0 2px 8px #000;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: none;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.month-select:focus {
+  border-color: #ffb366;
+  box-shadow: 0 4px 16px #6ec6ff;
+}
+
+@media (max-width: 600px) {
+  .month-selector-container label {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+  .month-select {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+}
