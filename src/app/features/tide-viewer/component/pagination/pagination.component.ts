@@ -1,14 +1,15 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {CommonModule, DatePipe} from "@angular/common";
+import {MareeCardComponent} from "../maree-card/maree-card.component";
 
 @Component({
   selector: 'marees-pagination',
-  template: `
-    <div class="pagination">
-      <button (click)="prevPage()" [disabled]="currentPage === 1">Précédent</button>
-      <span>Page {{ currentPage }} / {{ totalPages }}</span>
-      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Suivant</button>
-    </div>
-  `,
+  templateUrl: './pagination.component.html',
+  imports: [
+    DatePipe,
+    MareeCardComponent,
+    CommonModule
+  ],
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent {

@@ -9,24 +9,7 @@ import {MonthSelectorComponent} from '../month-selector/month-selector.component
 
 @Component({
   selector: 'marees-viewer',
-  template: `
-    <div class="marees-container">
-      <month-selector
-        [selectedMonth]="selectedMonth"
-        (selectedMonthChange)="onMonthChange($event)">
-      </month-selector>
-      <h1>
-        <span class="icon">🌊</span>
-        Horaires des marées - {{ selectedMonth | titlecase }} 2025
-        <span class="icon">🕒</span>
-      </h1>
-      <maree-day *ngFor="let day of pagedMarees" [day]="day"></maree-day>
-      <marees-pagination
-        [currentPage]="currentPage"
-        [totalPages]="totalPages"
-        (pageChange)="onPageChange($event)"></marees-pagination>
-    </div>
-  `,
+  templateUrl: './marees-viewer.component.html',
   imports: [
     MareeDayComponent,
     PaginationComponent,

@@ -2,25 +2,9 @@ import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'maree-card',
-  template: `
-    <div class="maree-card">
-      <div class="maree-card-row">
-        <span class="maree-card-label"><span class="icon">🕒</span>Heure :</span>
-        <span class="maree-card-value">{{ tide?.time }}</span>
-      </div>
-      <div class="maree-card-row">
-        <span class="maree-card-label"><span class="icon">📏</span>Hauteur :</span>
-        <span class="maree-card-value">{{ tide?.height }} m</span>
-      </div>
-      <div class="maree-card-row">
-        <span class="maree-card-label"><span class="icon">🌊</span>Type :</span>
-        <span class="maree-card-value">{{ tide?.type }}</span>
-      </div>
-    </div>
-  `,
+  templateUrl: './maree-card.component.html',
   styleUrls: ['./maree-card.component.scss']
 })
 export class MareeCardComponent {
   @Input() tide: any;
 }
-

@@ -4,14 +4,7 @@ import {CommonModule, DatePipe} from "@angular/common";
 
 @Component({
   selector: 'maree-day',
-  template: `
-    <div class="maree-day">
-      <h2>{{ day?.date | date:'EEEE d MMMM yyyy' }}</h2>
-      <div class="marees-cards">
-        <maree-card *ngFor="let tide of day?.tides" [tide]="tide"></maree-card>
-      </div>
-    </div>
-  `,
+  templateUrl: './maree-day.component.html',
   imports: [
     MareeCardComponent,
     DatePipe,

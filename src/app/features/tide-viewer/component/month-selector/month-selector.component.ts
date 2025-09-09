@@ -10,14 +10,7 @@ const MONTHS = [
 
 @Component({
   selector: 'month-selector',
-  template: `
-    <div class="month-selector-container">
-      <label for="mois-select">Mois :</label>
-      <select id="mois-select" [ngModel]="selectedMonth" (ngModelChange)="onChange($event)" class="month-select">
-        <option *ngFor="let month of months" [value]="month.value">{{ month.label }}</option>
-      </select>
-    </div>
-  `,
+  templateUrl: './month-selector.component.html',
   standalone: true,
   imports: [
     FormsModule, CommonModule
