@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, effect, inject} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, inject} from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {BasicComponent} from '../../../../shared/model/page/basic';
 import {
@@ -18,6 +18,8 @@ import {CommonModule} from '@angular/common';
 import {DishItemServiceService} from '../../service/dish/item/dish-item-service.service';
 import {DishOverview} from '../../model/DishOverview';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ChipsContent} from "../../../../shared/model/chips/ChipsContent";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-recipe-container-list',
@@ -39,7 +41,11 @@ export class RecipeContainerListComponent implements BasicComponent {
 
   search: FormControl = new FormControl('')
 
-  constructor(private componentLoaderService: ComponentLoaderService, private dishItemServiceService: DishItemServiceService) {
+  triggerFilter: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+
+  constructor(private componentLoaderService: ComponentLoaderService,
+              private dishItemServiceService: DishItemServiceService,
+              private cdr: ChangeDetectorRef) {
 
     effect(() => {
 
@@ -60,10 +66,27 @@ export class RecipeContainerListComponent implements BasicComponent {
           this.dishOverviews = []
         }
       })
+
+    this.triggerFilter.subscribe(() => {
+
+      const selectedChips = this.dishItemServiceService.getChipsSelected();
+      const allDishes = this.dishItemServiceService.getDishesOverviewByType(this.componentType);
+
+      this.dishOverviews = [...(selectedChips.length === 0
+        ? allDishes
+        : allDishes.filter(dish => dish.chips.filter(chip => selectedChips.filter(schip => schip.label === chip.label).length > 0).length > 0))]
+
+      this.cdr.markForCheck()
+    })
   }
 
   openBottomSheet(): void {
-    this._bottomSheet.open(RecipeFilterComponent);
+    this._bottomSheet.open(RecipeFilterComponent)
+      .afterDismissed()
+      .subscribe(() => {
+        this.triggerFilter.next(true);
+      });
+
   }
 
 }
@@ -71,14 +94,30 @@ export class RecipeContainerListComponent implements BasicComponent {
 @Component({
   selector: 'app-recipe-filter',
   templateUrl: './recipe-filter.html',
+  styleUrl: './recipe-filter.component.scss',
   imports: [MatListModule],
 })
 export class RecipeFilterComponent {
   private _bottomSheetRef =
     inject<MatBottomSheetRef<RecipeFilterComponent>>(MatBottomSheetRef);
 
-  openLink(event: MouseEvent): void {
+  chipsContent: ChipsContent[] = []
+  chipsSelected: ChipsContent[] = []
+
+  constructor(private dishItemServiceService: DishItemServiceService) {
+    this.chipsContent = Array.from(this.dishItemServiceService.chipsContentMap.values())
+    this.chipsSelected = this.dishItemServiceService.getChipsSelected()
+  }
+
+  selectChip(event: MouseEvent, selected: ChipsContent): void {
+    this.chipsSelected.includes(selected) ?
+      this.dishItemServiceService.setChipsSelected(this.chipsSelected.filter(chip => chip !== selected)) :
+      this.dishItemServiceService.setChipsSelected([...this.chipsSelected, selected])
     this._bottomSheetRef.dismiss();
     event.preventDefault();
+  }
+
+  isChipSelected(chip: ChipsContent): boolean {
+    return this.chipsSelected.includes(chip)
   }
 }

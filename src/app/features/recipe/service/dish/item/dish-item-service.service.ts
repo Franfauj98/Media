@@ -9,20 +9,30 @@ import Fuse from "fuse.js";
 })
 export class DishItemServiceService {
 
+  public chipVegetatian: string = 'vegetarian'
+  public chipGuilty: string = 'guilty'
+  public chipYummy: string = 'yummy'
+
+  public chipsContentMap: Map<string, ChipsContent> = new Map<string, ChipsContent>([
+    [this.chipVegetatian, new ChipsContent('grain', 'Végé', 'vegetarian-chip')],
+    [this.chipGuilty, new ChipsContent('fastfood', 'Guilty', 'guilty-chip')],
+    [this.chipYummy, new ChipsContent('cookie', 'Yummy', 'yummy-chip')]
+  ]);
+
   private dishesFirstMealOverview: DishOverview[] = [
     new DishOverview('rice_bowl', 'Rouleau de printemps', 'Frais et délicieux', 'rouleau_printemps.jpg', 'Photo of a spring roll',
-      [new ChipsContent('grain', 'Végé', 'vegetarian-chip'), new ChipsContent('fastfood', 'Guilty', 'guilty-chip'),
-        new ChipsContent('cookie', 'Yummy', 'yummy-chip')],
+      [this.chipsContentMap.get(this.chipVegetatian)!!, this.chipsContentMap.get(this.chipGuilty)!!, this.chipsContentMap.get(this.chipYummy)!!],
       'Enveloppé par une feuille de riz humide et garni d\'ingrédients frais le rouleau de printemps est un délice en toutes saisons.',
       'La recette !'
     ),
     new DishOverview('rice_bowl', 'Salade de riz', 'Frais et délicieux', 'rouleau_printemps.jpg', 'Photo of a spring roll',
-      [new ChipsContent('grain', 'Végé', 'vegetarian-chip'), new ChipsContent('fastfood', 'Guilty', 'guilty-chip'),
-        new ChipsContent('cookie', 'Yummy', 'yummy-chip')],
+      [this.chipsContentMap.get(this.chipVegetatian)!!, this.chipsContentMap.get(this.chipGuilty)!!],
       'Enveloppé par une feuille de riz humide et garni d\'ingrédients frais le rouleau de printemps est un délice en toutes saisons.',
       'La recette !'
     )
   ]
+
+  private chipsSelected: ChipsContent[] = []
 
   private dishesMainMealOverview: DishOverview[] = []
 
@@ -61,6 +71,14 @@ export class DishItemServiceService {
 
   searchDishesFirstMealOverview(element: string): any[] {
     return this.searchFirstDish.search(element)
+  }
+
+  setChipsSelected(chips: ChipsContent[]): void {
+    this.chipsSelected = chips
+  }
+
+  getChipsSelected(): ChipsContent[] {
+    return this.chipsSelected
   }
 
 }

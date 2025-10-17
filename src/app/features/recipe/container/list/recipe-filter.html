@@ -1,18 +1,10 @@
 <mat-nav-list>
 
-  <a mat-list-item (click)="openLink($event)">
-    <span matListItemTitle>Healthy</span>
-    <span matLine>Tous nos plats healty</span>
-  </a>
-
-  <a mat-list-item (click)="openLink($event)">
-    <span matListItemTitle>Guilty pleasure</span>
-    <span matLine>Faites vous plaisir</span>
-  </a>
-
-  <a mat-list-item (click)="openLink($event)">
-    <span matListItemTitle>Végé</span>
-    <span matLine>De la gourmandise</span>
-  </a>
+  @for (chip of chipsContent; track chip.label) {
+    <a mat-list-item (click)="selectChip($event, chip)" [class.selected]="isChipSelected(chip)">
+      <span matListItemTitle>{{ chip.label }}</span>
+      <span matLine>{{ chip.label }}</span>
+    </a>
+  }
 
 </mat-nav-list>

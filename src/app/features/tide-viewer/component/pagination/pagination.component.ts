@@ -1,13 +1,10 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {CommonModule, DatePipe} from "@angular/common";
-import {MareeCardComponent} from "../maree-card/maree-card.component";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'marees-pagination',
   templateUrl: './pagination.component.html',
   imports: [
-    DatePipe,
-    MareeCardComponent,
     CommonModule
   ],
   styleUrls: ['./pagination.component.scss']
