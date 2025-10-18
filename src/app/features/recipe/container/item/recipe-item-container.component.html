@@ -1,0 +1,33 @@
+<!-- Fiche recette minimaliste -->
+<div class="recipe-card">
+  <div class="recipe-title">{{ dishOverview.headerTitle }}</div>
+  <img [src]="dishOverview.photo || 'assets/image/dessert.jpg'" [alt]="dishOverview.photoDescription"
+       class="recipe-image">
+  <div class="recipe-meta">
+    <div class="meta-item">
+      <span class="meta-label">Préparation :</span>
+      <span class="meta-value">{{ dishOverview.recipe.preparationTime }} min</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Cuisson :</span>
+      <span class="meta-value">{{ dishOverview.recipe.cookingTime }} min</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Pour :</span>
+      <span class="meta-value">{{ dishOverview.recipe.servings }} personnes</span>
+    </div>
+  </div>
+  <div class="section-title">Ingrédients</div>
+  <ul>
+    @for (item of dishOverview.recipe.ingredient; let i = $index; track i) {
+      <li>{{ item.quantity }} {{ item.name }}</li>
+    }
+  </ul>
+  <div class="section-title">Étapes</div>
+  <ol>
+    @for (item of dishOverview.recipe.instructions; let i = $index; track i) {
+      <li>{{ item.description }}</li>
+    }
+  </ol>
+  <div class="notes" *ngIf="dishOverview.recipe.tip">Astuce : {{ dishOverview.recipe.tip }}</div>
+</div>

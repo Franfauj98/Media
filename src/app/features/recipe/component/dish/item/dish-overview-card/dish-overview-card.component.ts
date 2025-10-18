@@ -5,6 +5,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {ChipsComponent} from "../../../../../../shared/components/chips/chips/chips.component";
 import {CommonModule} from '@angular/common';
 import {DishOverview} from '../../../../model/DishOverview';
+import {ComponentLoaderService} from "../../../../../../shared/services/component/loader/component-loader.service";
+import {RecipeItemContainerComponent} from "../../../../container/item/recipe-item-container.component";
 
 @Component({
   selector: 'app-dish-overview-card',
@@ -17,4 +19,12 @@ export class DishOverviewCardComponent {
 
   @Input({required: true}) public dishOverview!: DishOverview
 
+  constructor(private componentLoaderService: ComponentLoaderService) {
+  }
+
+  public loadRecipe() {
+
+    this.componentLoaderService.loadComponent(RecipeItemContainerComponent)
+    this.componentLoaderService.loadComponentContent(this.dishOverview)
+  }
 }

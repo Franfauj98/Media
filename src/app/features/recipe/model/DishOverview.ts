@@ -1,4 +1,5 @@
 import {ChipsContent} from "../../../shared/model/chips/ChipsContent"
+import {Recipe} from "./Recipe";
 
 export class DishOverview {
   headerIcon: string = ''
@@ -9,10 +10,11 @@ export class DishOverview {
   chips: ChipsContent[] = []
   description: string = ''
   buttonLabel: string = ''
+  recipe: Recipe = new Recipe([], [], 0, 0, 0)
 
   constructor(
     headerIcon: string, headerTitle: string, headerSubtitle: string, photo: string, photoDescription: string,
-    chips: ChipsContent[], description: string, buttonLabel: string
+    chips: ChipsContent[], description: string, buttonLabel: string, recipe: Recipe
   ) {
     this.headerIcon = headerIcon
     this.headerTitle = headerTitle
@@ -22,5 +24,6 @@ export class DishOverview {
     this.chips = chips
     this.description = description
     this.buttonLabel = buttonLabel
+    this.recipe = recipe
   }
 }
