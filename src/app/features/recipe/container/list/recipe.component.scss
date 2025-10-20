@@ -22,6 +22,15 @@
 }
 
 .recipe-list {
-  width: 90%;
-  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 2.5rem;
+  padding: 2rem 1rem;
+
+  @media (max-width: 600px) {
+    display: block;
+    padding: 1rem 0.5rem;
+    gap: 0;
+  }
 }
