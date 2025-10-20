@@ -124,9 +124,7 @@ export class DishItemServiceService {
       "assets/images/cookies-speculoos.jpg",
       "Cookies moelleux au cœur coulant de pâte de spéculoos, à la fois croustillants et fondants.",
       [
-        new ChipsContent("🍪", "Gourmand", "chip--orange"),
-        new ChipsContent("🔥", "Cœur coulant", "chip--red"),
-        new ChipsContent("🎄", "Spéculoos", "chip--brown")
+        this.chipsContentMap.get(this.chipVegetatian)!!, this.chipsContentMap.get(this.chipGuilty)!!, this.chipsContentMap.get(this.chipYummy)!!,
       ],
       "Des cookies ultra-gourmands au cœur fondant de pâte de spéculoos : croustillants à l’extérieur, fondants à l’intérieur… irrésistibles !",
       "Voir la recette",
@@ -168,7 +166,7 @@ export class DishItemServiceService {
         "Ces cookies se conservent 4 à 5 jours dans une boîte hermétique, ou se congèlent (cuits ou crus) pour des envies sucrées à la demande !"
       )
     )
-]
+  ]
 
   private searchFirstDish: any;
 

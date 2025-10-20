@@ -1,6 +1,15 @@
 <!-- Fiche recette minimaliste -->
 <div class="recipe-card">
-  <div class="recipe-title">{{ dishOverview.headerTitle }}</div>
+  <div class="recipe-title">
+    <div class="previous-button">
+      <button matMiniFab aria-label="previous" (click)="previousPage()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <div class="recipe-title">
+      {{ dishOverview.headerTitle }}
+    </div>
+  </div>
   <img [src]="dishOverview.photo || 'assets/image/dessert.jpg'" [alt]="dishOverview.photoDescription"
        class="recipe-image">
   <div class="recipe-meta">

@@ -20,6 +20,7 @@ import {DishOverview} from '../../model/DishOverview';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ChipsContent} from "../../../../shared/model/chips/ChipsContent";
 import {BehaviorSubject} from "rxjs";
+import {RecipeTypeDishPageComponent} from "../type/dish/page.component";
 
 @Component({
   selector: 'app-recipe-container-list',
@@ -89,6 +90,10 @@ export class RecipeContainerListComponent implements BasicComponent {
 
   }
 
+  previousPage() {
+
+    this.componentLoaderService.loadComponent(RecipeTypeDishPageComponent)
+  }
 }
 
 @Component({

@@ -3,11 +3,16 @@ import {ComponentLoaderService} from "../../../../shared/services/component/load
 import {Recipe} from "../../model/Recipe";
 import {DishOverview} from "../../model/DishOverview";
 import {NgIf} from "@angular/common";
+import {MatMiniFabButton} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
+import {RecipeContainerListComponent} from "../list/recipe.component";
 
 @Component({
   selector: 'app-recipe-item-container',
   imports: [
-    NgIf
+    NgIf,
+    MatIcon,
+    MatMiniFabButton
   ],
   templateUrl: './recipe-item-container.component.html',
   styleUrl: './recipe-item-container.component.scss'
@@ -26,4 +31,8 @@ export class RecipeItemContainerComponent {
   }
 
 
+  previousPage() {
+
+    this.componentLoaderService.loadComponent(RecipeContainerListComponent)
+  }
 }
