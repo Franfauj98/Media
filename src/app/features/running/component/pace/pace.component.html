@@ -1,0 +1,72 @@
+<div class="pace-card">
+  <div class="pace-card-header">
+    <h2>Calculateur de temps de course</h2>
+  </div>
+  <div class="pace-card-body">
+    <div class="pace-inputs">
+      <label>
+        Rythme (min/km) :
+        <div class="pace-slider-group">
+          <input type="range" min="180" max="480" step="1" [(ngModel)]="paceSeconds" (ngModelChange)="onPaceSliderChange()" />
+          <span class="pace-slider-value">{{ paceLabel }}</span>
+        </div>
+        <input type="text" class="pace-input-text" [value]="paceLabel" (input)="onPaceInputChange($event)" placeholder="mm:ss" />
+      </label>
+      <label>
+        Distance (km) :
+        <div class="pace-slider-group">
+          <input type="range" min="1" max="42" step="1" [(ngModel)]="distance" (ngModelChange)="calculateTime()" />
+          <span class="pace-slider-value">{{ distance }} km</span>
+        </div>
+        <input type="number" class="pace-input-text" [(ngModel)]="distance" (ngModelChange)="calculateTime()" min="1" max="42" step="1" placeholder="km" />
+        <div class="pace-distance-buttons">
+          <button type="button" (click)="setDistance(21)">Semi-marathon</button>
+          <button type="button" (click)="setDistance(42)">Marathon</button>
+        </div>
+      </label>
+    </div>
+    <div class="pace-result">
+      <div *ngIf="error" class="pace-error">{{ error }}</div>
+      <div *ngIf="totalTime && !error" class="pace-time">
+        <span>Temps total estimé :</span>
+        <strong>{{ totalTime }}</strong>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pace-card">
+  <div class="pace-card-header">
+    <h2>Calculateur d'allure</h2>
+  </div>
+  <div class="pace-card-body">
+    <div class="pace-inputs">
+      <label>
+        Temps total :
+        <div class="pace-slider-group">
+          <input type="range" min="600" max="21600" step="60" [(ngModel)]="durationSeconds" (ngModelChange)="onDurationSliderChange()" />
+          <span class="pace-slider-value">{{ durationLabel }}</span>
+        </div>
+        <input type="text" class="pace-input-text" [value]="durationLabel" (input)="onDurationInputChange($event)" placeholder="hh:mm" />
+      </label>
+      <label>
+        Distance (km) :
+        <div class="pace-slider-group">
+          <input type="range" min="1" max="42" step="1" [(ngModel)]="distance2" (ngModelChange)="calculatePace()" />
+          <span class="pace-slider-value">{{ distance2 }} km</span>
+        </div>
+        <input type="number" class="pace-input-text" [(ngModel)]="distance2" (ngModelChange)="calculatePace()" min="1" max="42" step="1" placeholder="km" />
+        <div class="pace-distance-buttons">
+          <button type="button" (click)="setDistance2(21)">Semi-marathon</button>
+          <button type="button" (click)="setDistance2(42)">Marathon</button>
+        </div>
+      </label>
+    </div>
+    <div class="pace-result">
+      <div *ngIf="error2" class="pace-error">{{ error2 }}</div>
+      <div *ngIf="paceResult && !error2" class="pace-time">
+        <span>Allure estimée :</span>
+        <strong>{{ paceResult }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

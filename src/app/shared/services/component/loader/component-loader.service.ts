@@ -7,6 +7,7 @@ import {TideComponent} from "../../../../features/tide-viewer/container/tide.com
 import {Recipe} from "../../../../features/recipe/model/Recipe";
 import {RecipeItemContainerComponent} from "../../../../features/recipe/container/item/recipe-item-container.component";
 import {DishOverview} from "../../../../features/recipe/model/DishOverview";
+import {RunningAppComponent} from "../../../../features/running/container/running-app/running-app.component";
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class ComponentLoaderService {
     new MenuItem(RecipeContainerListComponent, 'Recette', true),
     new MenuItem(RecipeItemContainerComponent, 'RecetteItem', true),
     new MenuItem(TideComponent, 'Marées', false),
+    new MenuItem(RunningAppComponent, 'Running', false),
     new MenuItem(AboutComponent, 'À propos', false),
   ];
 

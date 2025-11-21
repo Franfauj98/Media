@@ -1,0 +1,104 @@
+.pace-card {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.pace-card-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.pace-card-header h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1976d2;
+}
+.pace-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.pace-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.pace-inputs label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #333;
+}
+.pace-inputs input {
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.pace-inputs input:focus {
+  border-color: #1976d2;
+}
+.pace-input-text {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+  outline: none;
+  width: 120px;
+  transition: border-color 0.2s;
+  display: block;
+}
+.pace-input-text:focus {
+  border-color: #1976d2;
+}
+.pace-result {
+  text-align: center;
+}
+.pace-error {
+  color: #d32f2f;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.pace-time {
+  font-size: 1.1rem;
+  color: #388e3c;
+  font-weight: 500;
+}
+.pace-slider-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+.pace-slider-value {
+  font-size: 1.05rem;
+  color: #1976d2;
+  min-width: 60px;
+  text-align: left;
+}
+.pace-distance-buttons {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+.pace-distance-buttons button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pace-distance-buttons button:hover {
+  background: #1565c0;
+}
